@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef int ElemType; //定义ElemType为int类型
+typedef int ElemType; // 定义ElemType为int类型
 
 typedef struct LNode // 定义单链表结点类型
 {
@@ -34,6 +34,7 @@ bool Empty(LinkList L)
     }
 }
 
+/* 时间复杂度O(n) 时间代价低 */
 /* 按位序插入 (带头结点) */
 bool ListInsert(LinkList &L, ElemType i, ElemType e)
 {
@@ -114,6 +115,7 @@ bool InsertPriorNode(LNode *p, LNode *s)
     return true; // 插入成功
 }
 
+/* 时间复杂度O(n) 时间代价低 */
 /* 按位序删除 (带头结点) */
 bool ListDelete(LinkList &L, int i, ElemType &e)
 {
@@ -151,7 +153,7 @@ bool DeleteNode(LNode *p)
     return true;
 }
 
-/* 按位查找(带头结点) */
+/* 按位查找(带头结点) 时间复杂度O(n) */
 LNode *GetElem(LinkList L, int i)
 {
     int j = 1;          // 当前p指向的是第几个结点

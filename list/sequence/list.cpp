@@ -17,6 +17,7 @@ void InitList(SqList &L)
     L.length = 0; // 顺序表初始长度为0
 }
 
+/* 时间复杂度O(n) 时间代价高 */
 bool ListInsert(SqList &L, int i, int e)
 {
     if (i < 1 || i > L.length + 1)
@@ -36,6 +37,7 @@ bool ListInsert(SqList &L, int i, int e)
     return true;
 }
 
+/* 时间复杂度O(n) 时间代价高 */
 bool ListDelete(SqList &L, int i, int &e)
 {
     if (i < 1 || i > L.length)
@@ -52,6 +54,7 @@ bool ListDelete(SqList &L, int i, int &e)
     return true;
 }
 
+/* 按值查找时间复杂度O(n)/按位是O(1) */
 int LocateElem(SqList L, int e)
 {
     for (int i = 0; i < L.length; i++)
