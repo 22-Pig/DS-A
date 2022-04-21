@@ -125,23 +125,22 @@ bool Del_s_t_2(SqList &L, ElemType s, ElemType t)
 /* 从有序顺序表中删除所有其值重复的元素，使表中所有元素的值均不同。 */
 bool Del_Same(SqList &L)
 {
-    printf("111");
     if (L.length == 0)
     {
         return false;
     }
     int i, j; // i存储第一个不相同的元素，j为工作指针
-    for (i = 0, j = 1; i < L.length; j++)
+    for (i = 0, j = 1; j < L.length; j++)
     {
         if (L.data[i] != L.data[j]) // 查找下一个与上个元素值不同的元素
         {
-            printf("%d", L.data[i]);
             L.data[++i] = L.data[j]; // 找到后，则将元素前移
         }
     }
     L.length = i + 1;
     return true;
 }
+
 /* 遍历顺序表 */
 void Traversal(SqList L)
 {
@@ -200,14 +199,16 @@ int main(int argc, char const *argv[])
         printf("当前线性表的长度为：%d\n", L.length);
     } */
 
+    /* printf("去重结果：");
     bool flag3 = Del_Same(L);
     if (!flag3)
         printf("顺序表为空，请检查后重试！\n");
     else
     {
-        printf("去重结果：");
         Traversal(L);
-    }
+    } */
+
+    
 
     return 0;
 }
