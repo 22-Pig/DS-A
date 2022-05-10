@@ -54,3 +54,37 @@ void Inorder(ThreadNode *T)
         visit(p);
     }
 }
+
+/* 找到以p为根的子树中，最后一个被中序遍历的结点 */
+ThreadNode *Lastnode(ThreadNode *p)
+{
+    // 循环找到最右下结点（不一定是叶结点）
+    while (p->rtag == 0)
+    {
+        p = p->rchild;
+    }
+    return p;
+}
+
+/* 在中序线索二叉树中找到结点p的前驱结点 */
+ThreadNode *Prenode(ThreadNode *p)
+{
+    // 左子树中最右下结点
+    if (p->ltag == 0)
+    {
+        return Lastnode(p->lchild);
+    }
+    else
+    {
+        return p->lchild; // ltag==1直接返回后继线索
+    }
+}
+
+/* 对中序线索二叉树进行逆向中序遍历（利用线索实现的非递归算法） */
+void RevInorder(ThreadNode *T)
+{
+    for (ThreadNode *p = Lastnode(T); p != NULL; p = Prenode(p))
+    {
+        visit(p);
+    }
+}
