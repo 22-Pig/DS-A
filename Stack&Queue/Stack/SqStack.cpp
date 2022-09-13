@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MaxSize 10
+#define MaxSize 10 // 定义栈中元素的最大个数
 typedef int ElemType;
 
 typedef struct
@@ -48,7 +48,7 @@ bool Pop(SqStack &S, ElemType &x)
     {
         return false; // 栈空，报错
     }
-    // x = S.data[S.top]--;
+    // x = S.data[S.top--];
     x = S.data[S.top]; // 栈顶元素先出栈
     S.top = S.top - 1; // 指针减一
     return true;

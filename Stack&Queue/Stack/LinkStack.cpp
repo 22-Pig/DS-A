@@ -32,7 +32,6 @@ bool StackEmpty(LinkStack L)
 /* 入栈 */
 bool Push(LinkStack &S, ElemType e)
 {
-
     StackNode *p = (StackNode *)malloc(sizeof(StackNode));
     p->data = e;
     p->next = S;

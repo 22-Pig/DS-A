@@ -1,28 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MaxVertexNum 100 //顶点数目的最大值
+#define MaxVertexNum 100 // 顶点数目的最大值
 typedef int InfoType;
 typedef char VertexType;
 
-//边/弧
-typedef struct ArcNode
+typedef struct ArcNode // 边表结点
 {
-    int adjvex;           //边/弧指向哪个结点
-    struct ArcNode *next; //指向下一条边的指针
+    int adjvex;           // 该边指向顶点的位置
+    struct ArcNode *next; // 指向下一条边的指针
     // InfoType info; 边权值（非必要）
 } ArcNode;
 
-//顶点
-typedef struct VNode
+typedef struct VNode // 顶点表结点
 {
-    VertexType data; //顶点信息
-    ArcNode *first;  //第一条边/弧
+    VertexType data; // 顶点信息
+    ArcNode *first;  // 指向第一条依附该顶点的边的指针
 } VNode, AdjList[MaxVertexNum];
 
-//用邻接表存储图
 typedef struct
 {
-    AdjList vertices;
-    int vexnum, int arcnum;
-} ALGraph;
+    AdjList vertices;   // 邻接表
+    int vexnum, arcnum; // 图的顶点数和弧数
+} ALGraph;              // ALGraph是以邻接表存储的图类型
